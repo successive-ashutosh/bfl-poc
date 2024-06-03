@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+  }
+  header {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  section {
+    margin-bottom: 20px;
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  .carousel img {
+    width: 100%;
+    display: block;
+  }
+  .video-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
