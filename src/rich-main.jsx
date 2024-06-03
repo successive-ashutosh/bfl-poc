@@ -1,14 +1,12 @@
 import { render } from "solid-js/web";
-import { BillsAndRecharges, Categories, GridLayout } from "./components";
+import { BillsAndRecharges, Categories, GridLayout, Header } from "./components";
 
 
 function App() {
 
   return (
     <div>
-      {/* <header>
-        <h1>Retail Website - Rich</h1>
-      </header> */}
+      <Header/>
       <main>
       <Categories />
       <BillsAndRecharges />
