@@ -1,0 +1,134 @@
+.container {
+  overflow-x: auto;
+  padding: 10px;
+  width: 400px;
+}
+
+.scrollContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  display: inline-block;
+  margin: 8px;
+  text-align: center;
+}
+
+.image {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+.headersearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 10px 0;
+  position: relative;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemsContainer img {
+  height: 80px;
+  width: 80px;
+}
+
+.items-wrapper__title {
+  text-align: center;
+}
+
+.billsSection{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 15.5px;
+}
+
+.gridAnchor{
+  display: block;
+}
+
+.gridItemContainer{
+  position: relative;
+}
+
+.gridImage{
+  width: 104px;
+  height: 104px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #162a4e;
+  color: white;
+  margin: -10px;
+}
+ .searchIconBox {
+  background-color: #fff2ea;
+  color: #ff6700 !important;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  min-width: 40px;
+  font-size: 24px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.searchIconBox .bf-icon-search {
+  font-size: 20px;
+  padding: 0 8px; 
+} 
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px; /* Extra space for the icon */
+  border: none;
+  border-radius: 4px;
+}
+
+.headerCaption {
+  margin: 10px 0;
+  font-size: 12px;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.logo {
+  margin: 0;
+  padding: 0;
+}
+.logo img {
+  width: 73.49px;
+    height: 32px;
+}
+.icon {
+  margin:0 10px;
+}

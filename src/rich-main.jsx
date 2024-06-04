@@ -1,67 +1,57 @@
 import { render } from "solid-js/web";
-import { createSignal } from "solid-js";
+import { BillsAndRecharges, Categories, GridLayout, Header } from "./components";
+
 
 function App() {
-  const [cart, setCart] = createSignal([]);
-  const products = [
-    { id: 1, name: "Product 1", price: 10 },
-    { id: 2, name: "Product 2", price: 20 },
-    { id: 3, name: "Product 3", price: 30 },
-  ];
-
-  const addToCart = (product) => {
-    setCart([...cart(), product]);
-  };
-
-  const removeFromCart = (product) => {
-    setCart(cart().filter((item) => item.id !== product.id));
-  };
 
   return (
     <div>
-      <header>
-        <h1>Retail Website - Rich</h1>
-      </header>
+      <Header/>
       <main>
-        <section>
-          <div className="carousel">
-            <img loading="lazy" src="https://via.placeholder.com/600x300" alt="Carousel 1" />
-            <img loading="lazy" src="https://via.placeholder.com/600x300" alt="Carousel 2" />
-            <img loading="lazy" src="https://via.placeholder.com/600x300" alt="Carousel 3" />
-          </div>
-        </section>
-        <section>
-          <h2>Products</h2>
-          <ul>
-            {products.map((product) => (
-              <li key={product.id}>
-                {product.name} - ${product.price}
-                <button onClick={() => addToCart(product)}>Add to Cart</button>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section>
-          <div className="video-container">
-            <h2>Promotional Video</h2>
-            <video controls width="600">
-              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-              <track kind="captions" srcLang="en" src="captions.vtt" label="English" />
-              Your browser does not support HTML video.
-            </video>
-          </div>
-        </section>
-        <section>
-          <h2>Shopping Cart</h2>
-          <ul>
-            {cart().map((product) => (
-              <li key={product.id}>
-                {product.name} - ${product.price}
-                <button onClick={() => removeFromCart(product)}>Remove</button>
-              </li>
-            ))}
-          </ul>
-        </section>
+      <Categories />
+      <BillsAndRecharges />
+      <GridLayout
+        data={{ items: [
+          { title: 'ACs', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/acs-2?scl=1&amp;fmt=png-alpha', caption: 'Up to 30% off' },
+          { title: 'Smartphones', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/smartphones-32?scl=1&fmt=png-alpha', caption: 'Up to 10% off' },
+          { title: 'LED TVs', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/led-tvs-9?scl=1&fmt=png-alpha', caption: 'Up to 60% off' },
+          { title: 'Refrigerators', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/refrigerators-18?scl=1&fmt=png-alpha', caption: 'Up to 40% off' },
+          { title: 'Air coolers', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/air-cooler-13?scl=1&fmt=png-alpha', caption: 'Up to 40% off' },
+          { title: 'Washing Machines', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/washing-machine-31?scl=1&fmt=png-alpha', caption: 'Up to 45% off' },
+        ],
+        heading: 'Electronics on EMI' 
+      }}
+    />
+    <GridLayout
+        data={{ items: [
+          { title: 'Health', src: '	https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/health-v1-1?scl=1&fmt=png-alpha'},
+          { title: 'Car', src: '	https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/car-v1-1?scl=1&fmt=png-alpha'},
+          { title: 'Bike', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/bike-v1-1?scl=1&fmt=png-alpha'},
+          { title: 'Wallet Protect', src: '	https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/wallet-protect-v1?scl=1&fmt=png-alpha'},
+          { title: 'Personal Protect', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/personal-accident-cover-v1-2?scl=1&fmt=png-alpha'},
+          { title: 'Health Offers', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/health-offers-v1?scl=1&fmt=png-alpha'},
+        ],
+        heading: 'Insurance Bazaar' 
+      }}
+    />
+    <a href="https://www.bajajfinserv.in/credit-pass" style={{ width: '393px' }}>
+        <picture>
+          <source srcset="https://cms-assets.bajajfinserv.in/is/image/bajajfinance/CIBIL1?scl=1&amp;fmt=png-alpha" media="(min-width: 1025px)" />
+          <img src="https://cms-assets.bajajfinserv.in/is/image/bajajfinance/CIBIL17May?scl=1&amp;fmt=png-alpha" loading="lazy" style={{ width: '393px' }}/>
+        </picture>
+    </a>
+    <GridLayout
+        data={{ items: [
+          { title: 'LG', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/lg-10?scl=1&fmt=png-alpha'},
+          { title: 'Vivo', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/vivo-v1-1?scl=1&fmt=png-alpha'},
+          { title: 'Oppo', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/oppo-v4?scl=1&fmt=png-alpha'},
+          { title: 'Samsung', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/samsung-v5?scl=1&fmt=png-alpha'},
+          { title: 'Voltas', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/voltas-v1-1?scl=1&fmt=png-alpha'},
+          { title: 'Realme', src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinance/realme-7?scl=1&fmt=png-alpha'},
+        ],
+        heading: 'Our Brand Partners' 
+      }}
+    />
       </main>
     </div>
   );
