@@ -19,7 +19,7 @@ const Header = () => {
             <div class={styles.headersearch}>
                     <input type="text" placeholder="Search for loans and cards" class={styles.inputField} />
                     <span class={styles.searchIconBox}>
-                    <i class="fa fa-solid fa-magnifying-glass"></i>
+                    <i class="fas fa-search fa-fw"></i>
                         </span>
             </div>
             

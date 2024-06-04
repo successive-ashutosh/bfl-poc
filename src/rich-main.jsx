@@ -1,5 +1,5 @@
 import { render } from "solid-js/web";
-import { BillsAndRecharges, Categories, GridLayout, Header } from "./components";
+import { BillsAndRecharges, Categories, Footer, GridLayout, Header } from "./components";
 
 
 function App() {
@@ -53,6 +53,7 @@ function App() {
       }}
     />
       </main>
+      <Footer/>
     </div>
   );
 }
