@@ -84,7 +84,7 @@
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   min-width: 40px;
-  font-size: 24px;
+  font-size: 14px;
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -96,11 +96,9 @@
   transform: translateY(-50%);
   right: 0;
 }
-
-.searchIconBox .bf-icon-search {
-  font-size: 20px;
-  padding: 0 8px; 
-} 
+.searchIconBox i {
+  margin: 10px;
+}
 
 .inputField {
   width: 100%;
@@ -131,4 +129,62 @@
 }
 .icon {
   margin:0 10px;
+}
+
+
+.footer {
+  background-color: #002d62;
+  color: #ffffff;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.footercolumn {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  font-size: 12px;
+}
+
+.footercolumn h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footercolumn p,
+.footercolumn a {
+  margin: 5px 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footerbottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ffffff;
+  padding-top: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.footerbottom img {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+}
+
+.footerbottom div {
+  display: flex;
+  align-items: center;
 }
