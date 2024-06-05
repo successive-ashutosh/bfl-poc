@@ -1,8 +1,8 @@
 import styles from './component.module.css';
 
-const GridLayout = ({ data = {} }) => {
+const GridLayout = ({ data }) => {
+  const { items, heading } = data || {};
 
-  const { items, heading } = data;
   return (
     <section style={{ width: '400px' }}>
       <h2>{heading}</h2>
