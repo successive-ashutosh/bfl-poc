@@ -4,3 +4,4 @@ export { default as PARTNERS_MOCK } from './partners';
 export { default as BILLS_AND_RECHARGES_MOCK } from './billsAndRecharges';
 export { default as BANNER_MOCK } from './banner';
 export { default as CATEGORIES_MOCK } from './categories';
+export { default as CAROUSEL_MOCK } from './carousal';
