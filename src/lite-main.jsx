@@ -1,7 +1,7 @@
 import { render } from "solid-js/web";
 import { FooterCms } from "./cms/footerCms";
 import { HeaderCms } from "./cms/headerCms";
-import { liteContent } from "./cms/liteContent";
+import { liteContent } from "./mocks/liteContent";
 
 const App = () => {
   return (
