@@ -1,17 +1,21 @@
 .container {
   overflow-x: auto;
   padding: 10px;
-  width: 400px;
+  /* width: 400px; */
 }
 
 .scrollContainer {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .item {
   display: inline-block;
   margin: 8px;
+  text-align: center;
+  min-width: 85px;
   text-align: center;
 }
 
@@ -48,17 +52,22 @@
 .billsSection{
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.billsSection > a {
+  margin: 0 10px 5px;
 }
 
 .gridLayout {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px 15.5px;
+  display: flex;
+  flex-wrap: wrap;
+    justify-content: center;
 }
 
 .gridAnchor{
-  display: block;
+  width: calc(100% / 3 - 20px);
+  margin: 5px 10px;
 }
 
 .gridItemContainer{
@@ -66,8 +75,7 @@
 }
 
 .gridImage{
-  width: 104px;
-  height: 104px;
+  max-width: 100%;
 }
 
 .header {
@@ -76,7 +84,7 @@
   align-items: center;
   background-color: #162a4e;
   color: white;
-  margin: -10px;
+  /* margin: -10px; */
 }
  .searchIconBox {
   background-color: #fff2ea;
@@ -121,7 +129,7 @@
 }
 .logo {
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 .logo img {
   width: 73.49px;
@@ -188,3 +196,11 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 400px) {
+  .gridAnchor{
+    width: calc(100% / 2 - 20px);
+    margin: 5px 10px;
+  }
+}
+

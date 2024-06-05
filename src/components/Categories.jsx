@@ -4,7 +4,7 @@ const HorizontalScrollList = ({ data }) => {
   const { items = [] } = data || {};
 
   return (
-    <div class={styles.container}>
+    <div class={styles.container} >
       <div class={styles.scrollContainer}>
         {items.map(item => (
           <div key={item.id} class={styles.item}>

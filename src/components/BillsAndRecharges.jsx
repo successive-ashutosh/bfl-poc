@@ -4,7 +4,7 @@ const BillsAndRecharges = ({ data }) => {
   const { items = [], heading = '' } = data || {};
 
   return (
-      <section>
+      <section style='padding:10px;text-align:center'>
         {heading && <h2>{heading}</h2>}
         <div class={styles.billsSection}>
         {items.map((item) => <a href={item.redirect}>

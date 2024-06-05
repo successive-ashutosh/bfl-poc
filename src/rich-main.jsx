@@ -1,8 +1,6 @@
 import { render } from "solid-js/web";
 import { Banner, BillsAndRecharges, Categories, Footer, GridLayout, Header } from "./components";
-import { ELECTRONIC_EMI_MOCK, INSURANCE_BAZAAR_MOCK, PARTNERS_MOCK, BILLS_AND_RECHARGES_MOCK,
-  BANNER_MOCK, CATEGORIES_MOCK } from "./mocks";
-
+import { ELECTRONIC_EMI_MOCK, INSURANCE_BAZAAR_MOCK, PARTNERS_MOCK, BILLS_AND_RECHARGES_MOCK, BANNER_MOCK, CATEGORIES_MOCK } from "./mocks";
 
 const App = () => (
     <>
