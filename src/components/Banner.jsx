@@ -11,4 +11,4 @@ const Banner = ({ data }) => {
   )
 }
 
-export default Banner
+export default Banner;

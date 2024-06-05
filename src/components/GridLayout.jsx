@@ -19,4 +19,4 @@ const GridLayout = ({ data }) => {
   )
 }
 
-export default GridLayout
+export default GridLayout;

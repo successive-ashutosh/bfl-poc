@@ -18,4 +18,4 @@ const BillsAndRecharges = ({ data }) => {
   )
 }
 
-export default BillsAndRecharges
+export default BillsAndRecharges;
