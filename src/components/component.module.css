@@ -11,6 +11,11 @@
   flex-wrap: wrap;
 }
 
+.billrecharge {
+  padding:10px;
+  text-align:center;
+}
+
 .item {
   display: inline-block;
   margin: 8px;

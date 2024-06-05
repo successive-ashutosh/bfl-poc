@@ -1,10 +1,11 @@
+import { style } from 'solid-js/web';
 import styles from './component.module.css';
 
 const BillsAndRecharges = ({ data }) => {
   const { items = [], heading = '' } = data || {};
 
   return (
-      <section style='padding:10px;text-align:center'>
+      <section class={styles.billrecharge}>
         {heading && <h2>{heading}</h2>}
         <div class={styles.billsSection}>
         {items.map((item) => <a href={item.redirect}>

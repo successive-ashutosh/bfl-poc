@@ -1,3 +1,4 @@
+import { HeaderCms } from '../cms/headerCms';
 import styles from './component.module.css';
 
 const Header = () => {
@@ -5,7 +6,7 @@ const Header = () => {
         <header class={styles.header}>
             <div class={styles.headerWrapper}>
             <figure class={styles.logo}>
-                <img src={'/logo.png'} alt="Bajaj Finserv" />
+                <img src={'/logo.png'} alt={HeaderCms.LOGO_ALT} />
             </figure>
           
             <div class={styles.actions}>
@@ -24,7 +25,7 @@ const Header = () => {
             </div>
             
             <div class={styles.headerCaption}>
-                <span>BAJAJ FINANCE LIMITED</span>
+                <span>{HeaderCms.HEADER_TITLE}</span>
             </div>
         </header>
     );
