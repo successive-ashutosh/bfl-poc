@@ -1,87 +1,61 @@
 import { render } from "solid-js/web";
+import { FooterCms } from "./cms/footerCms";
+import { HeaderCms } from "./cms/headerCms";
+import { liteContent } from "./cms/liteContent";
 
 const App = () => {
   return (
     <div>
       <header class="header">
         <img src="/logo.png" alt="Bajaj Finserv" />
-        <span>BAJAY FINANCE LIMITED</span>
+        <span>{HeaderCms.HEADER_TITLE}</span>
       </header>
-      <main style='min-height:calc(100vh - 250px)'>
-        <section>
-          <h2>Bills and recharges</h2>
-          <div class="badge-container">
-            <div class="badge badge-round">
-              <h3>Mobile</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>Electricity</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>DTH</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>Credit card</h3>
-            </div>
+
+   <main style={{ minHeight: 'calc(100vh - 250px)' }}>
+      {liteContent.sections.map((section, index) => (
+        <section key={index}>
+          <h2>{section.title}</h2>
+          <div className="badge-container">
+            {section.badges.map((badge, badgeIndex) => (
+              <div className="badge badge-round" key={badgeIndex}>
+                <h3>{badge.title}</h3>
+                {badge.subtitle && <p>{badge.subtitle}</p>}
+              </div>
+            ))}
           </div>
         </section>
-        <section>
-          <h2>Electronics on EMI</h2>
-          <div class="badge-container">
-            <div class="badge badge-round">
-              <h3>ACs</h3>
-              <p>Up to 30% off</p>
-            </div>
-            <div class="badge badge-round">
-              <h3>Smartphones</h3>
-              <p>Up to 10% off</p>
-            </div>
-            <div class="badge badge-round">
-              <h3>LED TVs</h3>
-              <p>Up to 60% off</p>
-            </div>
-         
-            <div class="badge badge-round">
-              <h3>Refrigerators</h3>
-              <p>Up to 40% off</p>
-            </div>
-            <div class="badge badge-round">
-              <h3>Air Coolers</h3>
-              <p>Up to 40% off</p>
-            </div>
-            <div class="badge badge-round">
-              <h3>Washing Machines</h3>
-              <p>Up to 45% off</p>
-          </div>
-          </div>
-        </section>
-        <section>
-          <h2>Insurance Bazaar</h2>
-          <div class="badge-container">
-            <div class="badge badge-round">
-              <h3>Health</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>Car</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>Bike</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>Wallet Protect</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>Personal Protect</h3>
-            </div>
-            <div class="badge badge-round">
-              <h3>Health Offers</h3>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <h1>This is Footer</h1>
-      </footer>
+      ))}
+    </main>
+      <footer className="footer">
+      <div className="footerContent">
+        <div className="footercolumn">
+          <h4>{FooterCms.CORPORATE_OFFICE.title}</h4>
+          <p>{FooterCms.CORPORATE_OFFICE.address}</p>
+        </div>
+        <div className="footercolumn">
+          <h4>{FooterCms.BAJAJ_FINANCE_LIMITED.title}</h4>
+          <p>{FooterCms.BAJAJ_FINANCE_LIMITED.address}</p>
+          <p> {FooterCms.BAJAJ_FINANCE_LIMITED.phone}</p>
+          <p>{FooterCms.BAJAJ_FINANCE_LIMITED.email}</p>
+          <p> {FooterCms.BAJAJ_FINANCE_LIMITED.cin}</p>
+          <p>{FooterCms.BAJAJ_FINANCE_LIMITED.irda}</p>
+          <p>{FooterCms.BAJAJ_FINANCE_LIMITED.urn}</p>
+        </div>
+        <div className="footercolumn">
+          <h4>{FooterCms.BAJAJ_FINSERV_LIMITED.title}</h4>
+          <p>{FooterCms.BAJAJ_FINSERV_LIMITED.address}</p>
+          <p>{FooterCms.BAJAJ_FINSERV_LIMITED.phone}</p>
+          <p>{FooterCms.BAJAJ_FINSERV_LIMITED.email}</p>
+          <p> {FooterCms.BAJAJ_FINSERV_LIMITED.cin}</p>
+        </div>
+        <div className="footercolumn">
+          <h4>{FooterCms.OUR_COMPANIES.title}</h4>
+          {FooterCms.OUR_COMPANIES.companies.map((company, index) => (
+            <p key={index}>{company}</p>
+          ))}
+        </div>
+      </div>
+    </footer>
     </div>
   );
 };
@@ -115,6 +89,63 @@ body {
     margin: 25px 0;
   }
 
+  .footer {
+    background-color: #002d62;
+    color: #ffffff;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+  
+  .footercolumn {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    font-size: 12px;
+  }
+  
+  .footercolumn h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .footercolumn p,
+  .footercolumn a {
+    margin: 5px 0;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footerbottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ffffff;
+    padding-top: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .footerbottom img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+  }
+  
+  .footerbottom div {
+    display: flex;
+    align-items: center;
+  }
+
   .badge-container {
     display: flex;
     justify-content: center;
@@ -127,7 +158,7 @@ body {
     background-color: #f2f2f2;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .badge-round {
@@ -138,12 +169,8 @@ body {
   }
 
   .badge:hover {
-    transform: scale(1.1);
-  }
-
-  .footer {
     background-color: #002d62;
-    height: 100px;
+    color: #fff;
   }
 
   .footer h1 {
