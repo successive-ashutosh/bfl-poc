@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "node server.js"
+    "serve": "node index.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
