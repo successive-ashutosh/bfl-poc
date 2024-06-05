@@ -34,10 +34,10 @@ function App() {
         heading: 'Insurance Bazaar' 
       }}
     />
-    <a href="https://www.bajajfinserv.in/credit-pass" style={{ width: '393px' }}>
-        <picture>
+    <a href="https://www.bajajfinserv.in/credit-pass" style='display:block'>
+        <picture style='display:block'>
           <source srcset="https://cms-assets.bajajfinserv.in/is/image/bajajfinance/CIBIL1?scl=1&amp;fmt=png-alpha" media="(min-width: 1025px)" />
-          <img src="https://cms-assets.bajajfinserv.in/is/image/bajajfinance/CIBIL17May?scl=1&amp;fmt=png-alpha" loading="lazy" style={{ width: '393px' }}/>
+          <img src="https://cms-assets.bajajfinserv.in/is/image/bajajfinance/CIBIL17May?scl=1&amp;fmt=png-alpha" loading="lazy" style={{ width: '100%' }}/>
         </picture>
     </a>
     <GridLayout

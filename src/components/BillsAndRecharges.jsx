@@ -9,7 +9,7 @@ const BillsAndRecharges = () => {
     { id: 4, src: 'https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/credit-card-bill?scl=1&fmt=png-alpha', text: 'Credit Card' },
   ]);
   return (
-      <section>
+      <section style='padding:10px;text-align:center'>
         <h2>Bills and recharges</h2>
         <div class={styles.billsSection}>
         {items().map((item) => <a href="/bajajpay/bbps/?categoryId=5">

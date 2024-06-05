@@ -4,7 +4,7 @@ const GridLayout = ({ data = {} }) => {
 
   const { items, heading } = data;
   return (
-    <section style={{ width: '400px' }}>
+    <section style='padding:10px;text-align:center'>
       <h2>{heading}</h2>
       <div class={styles.gridLayout}>
         {items.map((item) => <a class={styles.gridAnchor}>
