@@ -3,37 +3,61 @@ import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const app = express();
+export default class Server {
 
-// Middleware to log requests and responses
-app.use((req, res, next) => {
-  const start = Date.now();
-  res.on('finish', () => {
-    const duration = Date.now() - start;
-    console.log(`${req.method} ${req.originalUrl} - ${res.statusCode} [${duration}ms]`);
-  });
-  next();
-});
+  constructor() {
+    this.app = express();
+  }
 
-// Enable Gzip compression
-app.use(compression());
+  get application() {
+    return this.app;
+  }
 
-// Determine the directory name
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-// Serve static files from the dist directory
-app.use(express.static(path.join(__dirname, 'dist'), {
-  maxAge: '1y',  // Cache static assets for 1 year
-  etag: false
-}));
+  bootstrap() {
+    this.initLogger();
+    this.initCompress();
+    this.setupRoutes();
 
-// Handle SPA (Single Page Application) routing by sending index.html for all other requests
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+    return this.app;
+  }
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+  setupRoutes() {
+    // Determine the directory name
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+    // Serve static files from the dist directory
+    this.app.use(express.static(path.join(__dirname, 'dist'), {
+      maxAge: '1y',  // Cache static assets for 1 year
+      etag: false
+    }));
+
+    // Handle SPA (Single Page Application) routing by sending index.html for all other requests
+    this.app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    });
+  }
+
+  /**
+   * Compression of the output
+   */
+  initCompress() {
+    this.app.use(compression());
+  }
+
+  /**
+  * Middleware to log requests and responses
+   */
+  initLogger() {
+    this.app.use((req, res, next) => {
+      const start = Date.now();
+      res.on('finish', () => {
+        const duration = Date.now() - start;
+        console.log(`${req.method} ${req.originalUrl} - ${res.statusCode} [${duration}ms]`);
+      });
+      next();
+    });
+  }
+
+}
