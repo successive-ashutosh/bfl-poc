@@ -3,7 +3,6 @@ import { lazy } from "solid-js";
 
 import { ELECTRONIC_EMI_MOCK, INSURANCE_BAZAAR_MOCK, PARTNERS_MOCK, BILLS_AND_RECHARGES_MOCK, BANNER_MOCK, CATEGORIES_MOCK, CAROUSEL_MOCK } from "./mocks";
 
-
 const Banner = lazy(() => import("./components/Banner"));
 const BillsAndRecharges = lazy(() => import("./components/BillsAndRecharges"));
 const Categories = lazy(() => import("./components/Categories"));
